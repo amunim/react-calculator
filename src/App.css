@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+#fullheight {
+    min-height: 100% !important;
+    height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#grid > div {
+    background-color: #4d4d4d;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#grid > div:hover {
+    scale: 1.05;
+    outline: 1px solid whitesmoke;
+    color: black;
 }
 
-.App-link {
-  color: #61dafb;
+p {
+    cursor: default;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#clear {
+    grid-column: 1 / span 2;
+    background-color: rgb(172, 57, 57) !important;
+}
+
+/* 0-key selector */
+#zero {
+    grid-column: 1 / span 2;
+}
+
+/* =-key selector */
+#equals {
+    grid-row: 4 / 6;
+    grid-column: 4;
+    background-color: rgb(0, 68, 108) !important;
+}
+
+/* arithmetic operators selectors */
+#divide,
+#multiple,
+#subtract,
+#add {
+    background-color: rgb(102, 102, 102) !important;
+}
+
+.author {
+    font-family: Share Tech Mono, sans;
 }

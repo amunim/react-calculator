@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Calculator from './components/Calculator';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="w-full h-full bg-sky-100 absolute">
+      </div>
+      <div className='flex flex-col justify-center h-[100%] w-[100%] absolute' >
+        <Calculator />
+        <div className='author text-lg'>
+          <p className='text-center mt-2'>Coded and Developed By</p>
+          <p className='text-center text-[#00264d]'>Abdul Munim</p>
+        </div>
+      </div>
+    </>
   );
 }
 
