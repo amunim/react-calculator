@@ -47,7 +47,7 @@ p {
 
 /* arithmetic operators selectors */
 #divide,
-#multiple,
+#multiply,
 #subtract,
 #add {
     background-color: rgb(102, 102, 102) !important;

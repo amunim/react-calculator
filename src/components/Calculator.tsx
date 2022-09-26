@@ -79,8 +79,9 @@ export default function Calculator() {
     const [formula, setFormula] = useState('');
     const [display, setDisplay] = useState('0');
     const [lastKey, setLastKey] = useState(''); //Only used after another keystroke of '=', to wrap inside useEffect for formula
-
-    useEffect(() => HandleClick(lastKey), [lastKey]);
+    useEffect(() => {
+        HandleClick(lastKey);
+    }, [lastKey]);
 
     function HandleClick(button: string): void {
         //clear screen
@@ -106,12 +107,11 @@ export default function Calculator() {
         //handle airthmetic operators
         if (arithmeticOperators.includes(button)) {
             setDisplay('');
-            
+
             if (formula.length === 0) return;
-            
-            if (formula.includes("="))
-            {
-                setFormula(display.concat(button));
+
+            if (formula.includes("=")) {
+                setFormula(`${display}${button}`);
                 return;
             }
 
@@ -132,7 +132,7 @@ export default function Calculator() {
             setDisplay("0");
             setFormula("");
 
-            if (button !== '=')
+            if (button !== "=")
                 setLastKey(button);
             return;
         }
@@ -146,6 +146,7 @@ export default function Calculator() {
             }
             catch (er) {
                 console.log(er);
+                console.log(formula.replaceAll("x", "*"));
                 setDisplay('');
                 setFormula('');
             }
